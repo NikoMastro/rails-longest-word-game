@@ -1,0 +1,20 @@
+<body>
+  <h1>Welcome to the longest word game</h1>
+  <div>
+    <h3>----Here is your grid----</h3>
+    <p>------------------------</p>
+    <!-- display letters -->
+    <p><%= @letters.join(', ') %></p>
+    <p>------------------------</p>
+
+    <h3>What's your word?</h3>
+    <form action="/score" method="POST" data-turbo="false">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="letters" value="<%= @letters.join %>">
+      <input type="hidden" name="start_time" value="<%= @start_time.to_s %>">
+      <input type="text" name="attempt" placeholder="Enter your word">
+      <!-- Submit button -->
+      <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+  </div>
+</body>

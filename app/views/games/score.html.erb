@@ -1,0 +1,12 @@
+<body>
+  <h1>Result</h1>
+  <div>
+    <!-- display the nb of attempt, the time, the score based on new html setup -->
+    <p>Your word: <%= @attempt %></p>
+    <p>Time taken: <%= @result[:time].round(2) %> seconds</p>
+    <p>Your score: <%= @result[:score] %></p>
+    <p>Message: <%= @result[:message] %></p>
+    <!-- return root by reset -->
+    <%= link_to 'Play again', :new, class: 'btn btn-primary' %>
+  </div>
+</body>
